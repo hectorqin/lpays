@@ -1,0 +1,16 @@
+{
+	"name" : "shanliu/lpays",
+	"type" : "project",
+	"version" : "0.1",
+	"description" : "lsys pay gateway",
+	"autoload" : {
+		"psr-4" : {
+			"LPAY\\" : "src/classes/LPAY/"
+		}
+	},
+	"require" : {
+		"php" : ">=5.4",
+		"endroid/qrcode" : "1.7.4",
+		"paypal/merchant-sdk-php" : "v3.9.1"
+	}
+}

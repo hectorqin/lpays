@@ -1,0 +1,28 @@
+<html>
+<head><meta http-equiv="content-type" content="text/html; charset=gbk">
+	<title>百度钱包 - 您安全可信赖的支付工具</title>
+</head>
+<body>
+
+<form action="pay_wap.php" method="post">
+商品名称: <input type="text" name="goods_name" required="required" value="baifubao_game"/>*必填<br/> 
+商品描述: <input type="text" name="goods_desc" value="baifubao_game_desc"/><br/>
+商品在商户网站上的URL：<input type="text" name="goods_url" value="https://www.baifubao.com/"/><br/>
+单价: <input type="text" name="unit_amount" value="1" /><br/>
+数量: <input type="text" name="unit_count" value="1"/><br/>
+运费: <input type="text" name="transport_amount" value="0"/><br/>
+总金额：<input type="text" name="total_amount" required="required" value="1"/>*必填，需满足：总金额 = 单价*数量+运费<br/>
+买家在商户网站的用户名: <input type="text" name="buyer_sp_username" value="三国乐斗spusername" /><br/>
+后台通知地址（return_url）: <input type="text" name="return_url"  required="required" value="http://113.47.214.147:8080/ReturnServlet" />*必填<br/>
+前台通知地址（page_url）: <input type="text" name="page_url" value="http://localhost:8080/ReturnServlet" /><br/>
+支付方式：<select name="pay_type" required="required" >   
+			<option value="2">余额支付/快捷支付（在百度钱包页面上选择银行，需要用户登录百度钱包）</option> 
+			<option value="1">余额支付（需要用户登录百度钱包）</option> 
+		   </select>*必填，固定值2<br/>
+默认银行的编码：<input type="text" name="bank_no" />如果支付方式是银行网关支付，则必须有值。取值范围参见接入指南附录<br/>
+商户自定义数据：<input type="text" name="extra" value=""/><br/>
+<input type="submit" value="提交"/><br/>
+</form>
+
+</body>
+</html>

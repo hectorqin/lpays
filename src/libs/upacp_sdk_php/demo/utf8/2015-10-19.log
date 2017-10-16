@@ -1,0 +1,104 @@
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_AppConsume.php ], Line[18]------ ============处理前台请求开始=============== 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[16]------ =====签名报文开始====== 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[22]------ 签名key=val&...串 >accessType=0&backUrl=http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=08&currencyCode=156&encoding=utf-8&frontUrl=http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php&merId=888888888888888&orderDesc=订单描述&orderId=20151019162108&reqReserved= 透传信息&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20151019162108&txnType=01&version=5.0.0 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[25]------ 摘要sha1x16 >9b0666fdefd06fc7cc93dadb849ec4fa42026d32 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[33]------ 签名串为 >TpECmtu+ytvWRDvPLu+QWzwla7tL7/4baqu0XnfRBdsZK2ezIuoBzxGPdujOl2JhoLj31FnAbRihLKN7cAkVN2dnfuwmsIdy40XztWXuQz8BzpOv4pf/kw/XwGbiupYgRPWpp5/gU8mSykAJRTXgiTXXzi873J3H9nOXI612RnQ= 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[38]------ =====签名报文结束====== 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_AppConsume.php ], Line[46]------ 后台请求地址为>https://101.231.204.80:5000/gateway/api/appTransReq.do 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_AppConsume.php ], Line[49]------ 后台返回结果为>txnType=01&respCode=11&frontUrl=http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php&channelType=08&currencyCode=156&orderDesc=订单描述&merId=888888888888888&txnSubType=01&txnAmt=100&version=5.0.0&signMethod=01&backUrl=http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php&certId=3474813271258769001041842579301293446&encoding=utf-8&respMsg=[9100004]Signature verification failed&reqReserved= 透传信息&bizType=000201&signature=JCDBVyugznkhHZZijOK9V9tToISc2mlJRI7+prtO3dEkrkSL5aWoxNdkI6N6xdE8zWuNEkPdrQI8JppU6mt9m1taZJxpBLYtMnMZftd2UP17KfPWgplCfutkTeZWPFPPR5uCKu+12hH/QRRITHZIO4LOy9TYw2jPSizrabljnXGhDdBUVn0yU05EpKcPfL8tpMf2vUEDduygw6QOdQzU261bwm/7GUZUsuwSlALOiMp/UHh1ARy7jn0QyILE+oV8ST0Lut36H8SyrV39XuVtwSJF97nksbR/w1NBpAPqbyi7O9/CAtkxJYxIeW1Pr10KS5LbsifAM3CBYYu6uTO46Q==&orderId=20151019162108&txnTime=20151019162108&accessType=0 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[74]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[77]------ 验证签名证书目录 :>D:\xampp\htdocs\route_os\upacp_sdk_php/ 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[87]------ 加载验签证书成功 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[56]------ 报文去[signature] key=val&串>accessType=0&backUrl=http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php&bizType=000201&certId=3474813271258769001041842579301293446&channelType=08&currencyCode=156&encoding=utf-8&frontUrl=http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php&merId=888888888888888&orderDesc=订单描述&orderId=20151019162108&reqReserved= 透传信息&respCode=11&respMsg=[9100004]Signature verification failed&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20151019162108&txnType=01&version=5.0.0 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[60]------ 摘要shax16>e1dda97479c719de42098266a55abf13c16f2871 
+2015-10-19 16:21:08, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[62]------ 验签成功 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[17]------ ============处理前台请求开始=============== 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[16]------ =====签名报文开始====== 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[22]------ 签名key=val&...串 >accessType=0&backUrl=http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=08&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php&merId=700000000000001&orderId=20151019162111&reqReserved= 透传信息&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20151019162111&txnType=01&version=5.0.0 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[25]------ 摘要sha1x16 >cce6a56709eb88de991e94a13a479f86b4b9bc10 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[33]------ 签名串为 >jiNP1FKfdX8E+aaYA+KcNzr8jLdWOY8WA5NCRQA29vVSVNi1RHT8ZW9bHl8e83pBC8vciMovjmAKU/O4D2/z9PG1KuMavYW8cgFaXJfPgwjAgjvoguMggISkYqstaC//kbkIgVkePngsQnUbI8g7N6X6rCv0I+5bnz7EzHyZr/Q= 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[38]------ =====签名报文结束====== 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[48]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[52]------ -------前台交易自动提交表单>--begin---- 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[53]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="700000000000001" />
+    <input type="hidden" name="orderId" id="orderId" value="20151019162111" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20151019162111" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="jiNP1FKfdX8E+aaYA+KcNzr8jLdWOY8WA5NCRQA29vVSVNi1RHT8ZW9bHl8e83pBC8vciMovjmAKU/O4D2/z9PG1KuMavYW8cgFaXJfPgwjAgjvoguMggISkYqstaC//kbkIgVkePngsQnUbI8g7N6X6rCv0I+5bnz7EzHyZr/Q=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[54]------ -------前台交易自动提交表单>--end------- 
+2015-10-19 16:21:11, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[55]------ ============处理前台请求 结束=========== 
+2015-10-19 16:21:43, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[74]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-10-19 16:21:43, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[77]------ 验证签名证书目录 :>D:\xampp\htdocs\route_os\upacp_sdk_php/ 
+2015-10-19 16:21:43, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[87]------ 加载验签证书成功 
+2015-10-19 16:21:43, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[56]------ 报文去[signature] key=val&串>accNo=6216***********0018&accessType=0&bizType=000201&certId=3474813271258769001041842579301293446&currencyCode=156&encoding=utf-8&merId=700000000000001&orderId=20151019162111&queryId=201510191621113306408&reqReserved=透传信息&respCode=00&respMsg=success&settleAmt=100&settleCurrencyCode=156&settleDate=1019&signMethod=01&traceNo=330640&traceTime=1019162111&txnAmt=100&txnSubType=01&txnTime=20151019162111&txnType=01&version=5.0.0 
+2015-10-19 16:21:43, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[60]------ 摘要shax16>1110db5b3c261396a97197bea5aa548b0678702b 
+2015-10-19 16:21:43, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[62]------ 验签成功 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[17]------ ============处理前台请求开始=============== 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[16]------ =====签名报文开始====== 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[22]------ 签名key=val&...串 >accessType=0&backUrl=http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php&bizType=000201&certId=124876885185794726986301355951670452718&channelType=08&currencyCode=156&defaultPayType=0001&encoding=utf-8&frontUrl=http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php&merId=700000000000001&orderId=20151019162359&reqReserved= 透传信息&signMethod=01&txnAmt=100&txnSubType=01&txnTime=20151019162359&txnType=01&version=5.0.0 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[25]------ 摘要sha1x16 >e0bd5b6a7ae82546641625f34b05b3add104cc5e 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[33]------ 签名串为 >I1bT72MVQkw9mmXx2eMzhVv+Vpe2wxFWFPW6vCJKYHeISaOre1sVIKE+1UR6CZTWv20QGsUp6FgC8fwemtpYlFX9yCRqKU1Ys2mXd0waGzq7JxHvWERevfQYvUC0OrhFDIw2VplIeEhhMXVhlSMlGJbaSXH9VE9GFm9h+TGMZSY= 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[38]------ =====签名报文结束====== 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[48]------ 前台请求地址为>https://101.231.204.80:5000/gateway/api/frontTransReq.do 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[52]------ -------前台交易自动提交表单>--begin---- 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[53]------ <html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body  onload="javascript:document.pay_form.submit();">
+    <form id="pay_form" name="pay_form" action="https://101.231.204.80:5000/gateway/api/frontTransReq.do" method="post">
+	    <input type="hidden" name="version" id="version" value="5.0.0" />
+    <input type="hidden" name="encoding" id="encoding" value="utf-8" />
+    <input type="hidden" name="certId" id="certId" value="124876885185794726986301355951670452718" />
+    <input type="hidden" name="txnType" id="txnType" value="01" />
+    <input type="hidden" name="txnSubType" id="txnSubType" value="01" />
+    <input type="hidden" name="bizType" id="bizType" value="000201" />
+    <input type="hidden" name="frontUrl" id="frontUrl" value="http://www.urltest.tk/upacp_sdk_php/demo/utf8/FrontReceive.php" />
+    <input type="hidden" name="backUrl" id="backUrl" value="http://114.82.43.123/upacp_sdk_php/demo/utf8/BackReceive.php" />
+    <input type="hidden" name="signMethod" id="signMethod" value="01" />
+    <input type="hidden" name="channelType" id="channelType" value="08" />
+    <input type="hidden" name="accessType" id="accessType" value="0" />
+    <input type="hidden" name="merId" id="merId" value="700000000000001" />
+    <input type="hidden" name="orderId" id="orderId" value="20151019162359" />
+    <input type="hidden" name="txnTime" id="txnTime" value="20151019162359" />
+    <input type="hidden" name="txnAmt" id="txnAmt" value="100" />
+    <input type="hidden" name="currencyCode" id="currencyCode" value="156" />
+    <input type="hidden" name="defaultPayType" id="defaultPayType" value="0001" />
+    <input type="hidden" name="reqReserved" id="reqReserved" value=" 透传信息" />
+    <input type="hidden" name="signature" id="signature" value="I1bT72MVQkw9mmXx2eMzhVv+Vpe2wxFWFPW6vCJKYHeISaOre1sVIKE+1UR6CZTWv20QGsUp6FgC8fwemtpYlFX9yCRqKU1Ys2mXd0waGzq7JxHvWERevfQYvUC0OrhFDIw2VplIeEhhMXVhlSMlGJbaSXH9VE9GFm9h+TGMZSY=" />
+    <input type="submit" type="hidden">
+    </form>
+</body>
+</html> 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[54]------ -------前台交易自动提交表单>--end------- 
+2015-10-19 16:23:59, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\demo\utf8\Form_6_2_FrontConsume.php ], Line[55]------ ============处理前台请求 结束=========== 
+2015-10-19 16:26:56, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[74]------ 报文返回的证书ID>3474813271258769001041842579301293446 
+2015-10-19 16:26:56, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[77]------ 验证签名证书目录 :>D:\xampp\htdocs\route_os\upacp_sdk_php/ 
+2015-10-19 16:26:56, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[87]------ 加载验签证书成功 
+2015-10-19 16:26:56, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[56]------ 报文去[signature] key=val&串>accNo=6216***********0018&accessType=0&bizType=000201&certId=3474813271258769001041842579301293446&currencyCode=156&encoding=utf-8&merId=700000000000001&orderId=20151019162359&queryId=201510191623593312328&reqReserved=透传信息&respCode=00&respMsg=success&settleAmt=100&settleCurrencyCode=156&settleDate=1019&signMethod=01&traceNo=331232&traceTime=1019162359&txnAmt=100&txnSubType=01&txnTime=20151019162359&txnType=01&version=5.0.0 
+2015-10-19 16:26:56, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[60]------ 摘要shax16>9ee53bcadfd656803b9fa30e232dce52ac7fe7c6 
+2015-10-19 16:26:56, INFO, 192.168.4.210, File[ D:\xampp\htdocs\route_os\upacp_sdk_php\utf8\func\secureUtil.php ], Line[62]------ 验签成功 

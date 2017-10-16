@@ -1,0 +1,24 @@
+欢迎您选择中国移动和包提供的支付接入服务，此目录的例子是PHP代码版本的。
+您可以直接把所有文件放在WEB服务器上应用的目录下，进行测试运行。
+文件目录说明
+|--phps2  目录
+   |--index.php  和包商户2.0.0接入演示首页
+   |--dodirectpayment_token_input.php 即时到账（双向确认）参数输入演示文件
+   |--dodirectpayment_token.php 即时到账（双向确认）接口，接入和包平台演示文件                         
+   |--dodirectpayment_sms_input.php 短信支付接口，参数输入演示文件
+   |--dodirectpayment_sms.php  短信支付接口，接入和包平台演示文件     
+   |--dogwdirectpayment_token_input.php 即时到账（网银网关）接口，参数输入演示文件
+   |--dogwdirectpayment_token.php       即时到账（网银网关）接口，接入和包平台演示文件  
+   |--dowapdirectpayment_token_input.php 即时到账（wap）接口，参数输入演示文件
+   |--dowapdirectpayment_token.php       即时到账（wap）接口，接入和包平台演示文件  
+   |--orderrefund_input.php    退款接口，参数输入演示文件
+   |--orderrefund.php          退款接口，接入和包平台演示文件   
+   |--ordersearch_input.php    订单查询接口，参数输入演示文件
+   |--ordersearch.php          订单查询接口，接入和包平台演示文件                               
+   |--back_url.php             页面通知接口。和包平台通知商户系统支付结果演示文件（页面发起）
+   |--notify_url.php           后台通知接口。和包平台通知商户系统支付结果演示文件（后台发起）
+   |--common 目录
+      |--callcmpay.php 共通函数文件
+      |--globalParam.php 商家属性文件,商家可以在此文件中修改商家的ID和密钥和支付返回地址(后台，页面)等信息
+      |--log.php 处理日志函数，需要打印日志可以用到此函数
+   |--log 默认配置的日志目录,如果需要修改必须修改log.php中相关                                                                                                                                                                                                                                                        
