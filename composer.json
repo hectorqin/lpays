@@ -2,7 +2,7 @@
 	"name" : "shanliu/lpays",
 	"type" : "project",
 	"version" : "0.1",
-	"description" : "lsys pay gateway",
+	"description" : "lsys pay gateway 集合支付网关",
 	"autoload" : {
 		"psr-4" : {
 			"LPAY\\" : "src/classes/LPAY/"
