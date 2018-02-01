@@ -10,7 +10,7 @@
 	},
 	"require" : {
 		"php" : ">=5.4",
-		"endroid/qrcode" : "1.7.4",
+		"endroid/qr-code" : "2.5.0",
 		"paypal/merchant-sdk-php" : "v3.9.1"
 	}
 }
