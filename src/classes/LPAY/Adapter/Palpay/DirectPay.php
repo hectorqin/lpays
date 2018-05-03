@@ -24,14 +24,12 @@ use PayPal\EBLBaseComponents\PayerInfoType;
 
 class DirectPay extends Palpay{
 	const NAME="lpay_palpay_direct";
-	public function __construct(DirectPayConfig $config){
+	protected $_session;
+	public function __construct(DirectPayConfig $config,\LSYS\Session $session=null){
 		$this->set_name(self::NAME);
 		$this->_config=$config;
+		$this->_session=$session?$session:\LSYS\Session::instance();
 	}
-	protected function _init_sess(){
-		if(!session_id()) session_start();
-	}
-	
 	/**
 	 * @return DirectPayConfig
 	 */
@@ -58,10 +56,10 @@ class DirectPay extends Palpay{
 		$pay_param=serialize($pay_param);
 		$key=md5($pay_param);
 		$skey=md5($key);
-		$this->_init_sess();
-		$_SESSION['__LPAY_DIRECT_PAY__'][$skey]=$pay_param;
-		if (count($_SESSION['__LPAY_DIRECT_PAY__'][$skey])>3)array_shift($_SESSION['__LPAY_DIRECT_PAY__'][$skey]);
-		
+		$spay=$this->_session->get("__LPAY_DIRECT_PAY__",[]);
+		$spay[$skey]=$pay_param;
+		if (count($spay)>3) array_shift($spay);
+		$this->_session->set("__LPAY_DIRECT_PAY__",$spay);
 		return new PayRender(PayRender::OUT_CREDITCARD, array('key'=>$key,'pay_param'=>$pay_param,'pay_url'=>$pay_url,'return_url'=>$return_url));
 	}
 	/**
@@ -72,9 +70,7 @@ class DirectPay extends Palpay{
 	 * @return \LPAY\PayResult|\LPAY\Pay\PayResult
 	 */
 	public function direct_pay($key,CreditCardDetailsType $cardDetails,PersonNameType $personName,AddressType $address){
-		
-		$this->_init_sess();
-		$session=isset($_SESSION['__LPAY_DIRECT_PAY__'])?$_SESSION['__LPAY_DIRECT_PAY__']:array();
+		$session=$this->_session->get('__LPAY_DIRECT_PAY__',[]);
 		$skey=md5($key);
 		if(!isset($session[$skey])||
 			!($pay_param=@unserialize($session[$skey]))||
@@ -149,7 +145,10 @@ class DirectPay extends Palpay{
 			return PayResult::fail($this->get_name(),$pay_param->get_sn(),  $doDirectPaymentResponse->TransactionID,  $err->LongMessage);
 		}
 		
-		unset($_SESSION['__LPAY_DIRECT_PAY__'][$skey]);
+		
+		
+		unset($session[$skey]);
+		$this->_session->set('__LPAY_DIRECT_PAY__',$session);
 		
 		
 		return PayResult::success($this->get_name(),$pay_param->get_sn(), $doDirectPaymentResponse->TransactionID,$doDirectPaymentResponse);

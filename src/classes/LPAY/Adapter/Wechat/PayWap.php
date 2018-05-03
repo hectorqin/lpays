@@ -18,14 +18,12 @@ use LPAY\Pay\QueryParam;
 class PayWap extends PayNotify implements PayAdapterCallback{
 	public static $save_key="__lpay_param__";
 	const NAME="lpay_wechat";
-	public function __construct(PayWapConfig $config){
+	protected $_session;
+	public function __construct(PayWapConfig $config,\LSYS\Session $session=null){
 		$this->set_name($this->support_name());
 		$this->_config=$config;
+		$this->_session=$session?$session:\LSYS\Session::instance();
 	}
-	protected static function _init_sess(){
-		if(!session_id()) session_start();
-	}
-	
 	public function enable(){
 		return Utils::user_agent(Utils::BROWSER_WECHAT);
 	}
@@ -47,11 +45,10 @@ class PayWap extends PayNotify implements PayAdapterCallback{
 		require_once Utils::lib_path("wechat/lib/WxPay.JsApiPay.php");
 		\WxPayApi::$config=$this->_config->get_WxPayConfigObj();
 		$state=uniqid();
-		self::_init_sess();
-		$_SESSION["__LPAY_WECAHT_PAY__"]=array(
+		$this->_session->set('__LPAY_WECAHT_PAY__', array(
 			'_param_'=>serialize($pay_param),
 			'_state_'=>$state
-		);
+		));
 		$pay_url =$this->_config->get_oauth_return_url();
 		$tools = new \JsApiPay();
 		$url = $tools->GetOpenidUrl(urlencode($pay_url),$state);
@@ -61,18 +58,19 @@ class PayWap extends PayNotify implements PayAdapterCallback{
 	 * refund page,get pay param
 	 * @return NULL|\LPAY\Pay\PayParam
 	 */
-	public static function get_pay_param(){
-		self::_init_sess();
-		if (!isset($_SESSION["__LPAY_WECAHT_PAY__"]['_param_'])) return null;
+	public static function get_pay_param(\LSYS\Session $session=null){
+		$session=$session?$session:\LSYS\Session::instance();
+		$payparam=$session->get("__LPAY_WECAHT_PAY__",[]);
+		if (!isset($payparam['_param_'])) return null;
 		/**
 		 * @var PayParam $pay_param
 		 */
-		$pay_param=@unserialize($_SESSION["__LPAY_WECAHT_PAY__"]['_param_']);
+		$pay_param=@unserialize($payparam['_param_']);
 		if (!$pay_param instanceof PayParam) return null;
 		//check other param
 		if (!isset($_GET['state'])||!isset($_GET['code'])) return null;
-		if (!isset($_SESSION["__LPAY_WECAHT_PAY__"]['_state_'])) return null;
-		if ($_GET['state']!=$_SESSION["__LPAY_WECAHT_PAY__"]['_state_']) return null;
+		if (!isset($payparam['_state_'])) return null;
+		if ($_GET['state']!=$payparam['_state_']) return null;
 		return $pay_param;
 	}
 	
@@ -153,7 +151,7 @@ class PayWap extends PayNotify implements PayAdapterCallback{
 	}
 	public function pay_callback(){
 		//不能在渲染完删除SESSION,因为微信电脑版有次后台的页面请求..
-		self::_init_sess();unset($_SESSION["__LPAY_WECAHT_PAY__"]);
+		$this->_session->delete("__LPAY_WECAHT_PAY__");
 		if (!isset($_GET[self::$save_key]))  return PayResult::unkown($this->get_name(),'pay sn not find');
 		$sn=Utils::decode_url($_GET[self::$save_key],$this->_config->get_WxPayConfigObj()->APPSECRET);
 		if (empty($sn)) return PayResult::unkown($this->get_name(),PayResult::$sign_invalid);
