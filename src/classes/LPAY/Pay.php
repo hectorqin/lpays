@@ -141,7 +141,7 @@ class Pay{
 		return null;
 	}
 	/**
-	 * @return \LPAY\Pay\TransfersAdapter[]
+	 * @return TransfersAdapter[]
 	 */
 	public function get_transfers(){
 		$handler=array();

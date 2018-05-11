@@ -10,8 +10,8 @@ use LPAY\Transfers\TransfersParam;
 use LPAY\Transfers\TransfersAdapter;
 interface RealTime extends TransfersAdapter{
 	/**
-	 * @param Param $param
-	 * @return TransfersResult
+	 * @param TransfersParam $param
+	 * @return \LPAY\Transfers\TransfersResult
 	 */
 	public function real_transfers(TransfersParam $param);
 }

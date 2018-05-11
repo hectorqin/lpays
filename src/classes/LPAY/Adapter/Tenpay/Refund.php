@@ -9,6 +9,7 @@ namespace LPAY\Adapter\Tenpay;
 use LPAY\Adapter\RefundAdapter;
 use LPAY\Pay\RefundParam;
 use LPAY\Pay\RefundResult;
+use LPAY\Utils;
 class Refund extends RefundAdapter{
 	/**
 	 * @var RefundConfig
