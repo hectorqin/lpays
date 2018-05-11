@@ -208,7 +208,7 @@ class Utils{
 	/**
 	 * 计算一个提款手续费
 	 * @param TransfersAdapter $transfers
-	 * @param unknown $money
+	 * @param string $money
 	 * @return number
 	 */
 	public static function transfers_money(TransfersAdapter $transfers,$money){
@@ -228,7 +228,7 @@ class Utils{
 	/**
 	 * 计算一个提款费率
 	 * @param TransfersAdapter $transfers
-	 * @param unknown $money
+	 * @param string $money
 	 * @return number
 	 */
 	public static function transfers_fee(TransfersAdapter $transfers,$money){

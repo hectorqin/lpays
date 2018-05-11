@@ -7,7 +7,7 @@ class Tools{
 	 *
 	 * 产生随机字符串，不长于32位
 	 * @param int $length
-	 * @return 产生的随机字符串
+	 * @return string
 	 */
 	private function _get_nonce_str($length = 32)
 	{
@@ -81,7 +81,7 @@ class Tools{
 	 * @param string $url  url
 	 * @param bool $useCert 是否需要证书，默认不需要
 	 * @param int $second   url执行超时时间，默认30s
-	 * @throws WxPayException
+	 * @throws Exception
 	 */
 	public static function post($url, $xml,Config $config,$useCert=false)
 	{

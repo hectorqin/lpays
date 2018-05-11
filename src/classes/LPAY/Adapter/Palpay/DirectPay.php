@@ -67,7 +67,7 @@ class DirectPay extends Palpay{
 	 * @param CreditCardDetailsType $cardDetails
 	 * @param PersonNameType $personName
 	 * @param AddressType $address
-	 * @return \LPAY\PayResult|\LPAY\Pay\PayResult
+	 * @return \LPAY\Pay\PayResult
 	 */
 	public function direct_pay($key,CreditCardDetailsType $cardDetails,PersonNameType $personName,AddressType $address){
 		$session=$this->_session->get('__LPAY_DIRECT_PAY__',[]);

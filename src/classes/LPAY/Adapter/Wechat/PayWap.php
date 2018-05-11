@@ -132,7 +132,7 @@ class PayWap extends PayNotify implements PayAdapterCallback{
 	/**
 	 * 获取支付HTML
 	 * @param PayParam $pay_param
-	 * @param unknown $jsApiParameters
+	 * @param array $jsApiParameters
 	 * @param string $auto_pay
 	 * @return string
 	 */

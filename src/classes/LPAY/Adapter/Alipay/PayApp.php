@@ -12,6 +12,7 @@ use LPAY\Utils;
 use LPAY\Result;
 use LPAY\Pay\PayParam;
 use LPAY\Pay\PayResult;
+use LPAY\Loger;
 class PayApp extends Alipay{
 	const NAME="lpay_alipay_app";
 	/**

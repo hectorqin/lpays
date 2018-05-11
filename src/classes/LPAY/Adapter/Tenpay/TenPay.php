@@ -12,6 +12,7 @@ use LPAY\Pay\PayResult;
 use LPAY\Pay\QueryParam;
 use LPAY\Pay\Query;
 use LPAY\Pay\PayAdapterNotify;
+use LPAY\Utils;
 abstract class TenPay extends PayAdapter implements PayAdapterCallback,PayAdapterNotify,Query{
 	/**
 	 * @var PayConfig

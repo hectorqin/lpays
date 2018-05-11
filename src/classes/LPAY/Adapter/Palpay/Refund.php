@@ -13,6 +13,7 @@ use PayPal\PayPalAPI\RefundTransactionRequestType;
 use PayPal\Service\PayPalAPIInterfaceServiceService;
 use PayPal\PayPalAPI\RefundTransactionReq;
 use LPAY\Exception;
+use PayPal\CoreComponentTypes\BasicAmountType;
 class Refund extends RefundAdapter{
 	/**
 	 * @var Config
@@ -112,7 +113,7 @@ class Refund extends RefundAdapter{
 		 Creating service wrapper object to make API call and loading
 		 Configuration::getAcctAndConfig() returns array that contains credential and config parameters
 		 */
-		$paypalService = new PayPalAPIInterfaceServiceService(Configuration::getAcctAndConfig());
+		$paypalService = new PayPalAPIInterfaceServiceService(\Configuration::getAcctAndConfig());
 		try {
 			/* wrap API method calls on the service object with a try catch */
 			$refundResponse = $paypalService->RefundTransaction($refundReq);
