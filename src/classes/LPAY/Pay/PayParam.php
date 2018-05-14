@@ -12,7 +12,7 @@ class PayParam extends Param implements \Serializable{
 	public static $sn_prefix="LO";
 	/**
 	 * @param float $money
-	 * @return \LPAY\Refund\PayParam
+	 * @return PayParam
 	 */
 	public static function factory($money,$sn=null){
 		return new PayParam($money,$sn);
