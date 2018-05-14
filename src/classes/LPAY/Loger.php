@@ -29,7 +29,12 @@ class Loger{
 		self::$_handler[]=$handler;
 	}
 	
-	
+	/**
+	 * destruct
+	 */
+	public function __destruct(){
+	    unset(self::$_instances[$this->_type]);
+	}
 	protected $_type;
 	protected $_logs=array();
 	public function __construct($type){
