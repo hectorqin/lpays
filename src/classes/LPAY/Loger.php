@@ -18,7 +18,7 @@ class Loger{
 	 * @param int $type
 	 * @return Loger
 	 */
-	public static function instance($type){
+	public static function &instance($type){
 		if (!isset(self::$_instances[$type])){
 			self::$_instances[$type]=new self($type);
 		}
