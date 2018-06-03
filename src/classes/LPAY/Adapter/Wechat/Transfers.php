@@ -28,15 +28,6 @@ class Transfers implements RealTime{
 	public function enable(){
 		return true;
 	}
-	public function fee(){
-		return 0;
-	}
-	public function min_fee(){
-		return 0;
-	}
-	public function max_fee(){
-		return 0;
-	}
 	/**
 	 * @return string
 	 */
