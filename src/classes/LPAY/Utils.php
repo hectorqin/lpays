@@ -206,35 +206,36 @@ class Utils{
 		return $prefix.date("ymdHis").rand(100, 999);
 	}
 	/**
-	 * 计算一个提款手续费
-	 * @param TransfersAdapter $transfers
-	 * @param string $money
-	 * @return number
+	 * 计算可提款金额
+	 * @param float $money　总金额
+	 * @param float $fee　费率
+	 * @param number $min_fee_money 最小手续费
+	 * @param number $max_fee_money　最大手续费
+	 * @return number　可提现金额
 	 */
-	public static function transfers_money(TransfersAdapter $transfers,$money){
-		$fee=$transfers->fee();
-		$money=floatval($money);
-		if($fee==0) return $money;
-		$max_fee=$transfers->max_fee();
-		$min_fee=$transfers->min_fee();
-		if($money<=$min_fee) return 0;
-		$min_money=$min_fee/$fee;
-		if($money<=$min_money) return $money-$min_fee>0?$money-$min_fee:0;
-		$max_money=$max_fee/$fee;
-		if($money>=$max_money) return $money-$max_fee;
-		$pay_fee=$money*$fee/($fee+1);
-		return $money-round($pay_fee,2);
+	public static function transfers_money($money,$fee,$min_fee_money=0,$max_fee_money=0){
+	    $money=floatval($money);
+	    if($fee==0) return $money;
+	    if($money<=$min_fee_money) return 0;
+	    $min_money=$min_fee_money/$fee;
+	    if($money<=$min_money) return $money-$min_fee_money>0?$money-$min_fee_money:0;
+	    $max_money=$max_fee_money/$fee;
+	    if($money>=$max_money) return $money-$max_fee_money;
+	    $pay_fee=$money*$fee/($fee+1);
+	    return $money-round($pay_fee,2);
 	}
 	/**
 	 * 计算一个提款费率
-	 * @param TransfersAdapter $transfers
-	 * @param string $money
-	 * @return number
+	 * @param float $fee　手续费率
+	 * @param float $money　付款金额
+	 * @param float $min_fee_money　最小手续费
+	 * @param float $max_fee_money 最大手续费　0为不限制最大
+	 * @return float　需要手续费
 	 */
-	public static function transfers_fee(TransfersAdapter $transfers,$money){
-		$pay_fee=$money*$transfers->fee();
-		if($pay_fee<$transfers->min_fee()) return $transfers->min_fee();
-		if ($pay_fee>$transfers->max_fee()) return $transfers->max_fee();
+	public static function transfers_fee($fee,$money,$min_fee_money=0,$max_fee_money=0){
+	    $pay_fee=$money*$fee;
+	    if($pay_fee<$min_fee_money) return $min_fee_money;
+	    if ($max_fee_money>0&&$pay_fee>$max_fee_money) return $max_fee_money;
 		return round($pay_fee,2);
 	}
 	/**
