@@ -13,7 +13,4 @@ interface TransfersAdapter extends Adapter{
 	 * @return string
 	 */
 	public function transfers_name();
-	public function fee();
-	public function min_fee();
-	public function max_fee();
 }
