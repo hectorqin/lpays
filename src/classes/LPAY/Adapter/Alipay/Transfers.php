@@ -41,16 +41,7 @@ class Transfers extends  TransfersNotifyBatch implements Batch{
 		}
 		return true;
 	}
-	
-	public function fee(){
-		return 0.005;
-	}
-	public function min_fee(){
-		return 1;
-	}
-	public function max_fee(){
-		return 25;
-	}
+
 	/**
 	 * @return string
 	 */
