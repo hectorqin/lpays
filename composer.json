@@ -1,7 +1,7 @@
 {
 	"name" : "shanliu/lpays",
 	"type" : "project",
-	"version" : "1.0.2",
+	"version" : "1.0.3",
 	"description" : "lsys pay gateway 集合支付网关",
 	"autoload" : {
 		"psr-4" : {
